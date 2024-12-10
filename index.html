@@ -98,6 +98,14 @@ main {
     outline: var(--color-coffee-500);
     color: var(--color-coffee-500);
 }
+/* targetting the active state to apply an effect when pressing the link to edit profile */
+.profile-info:has(a:active), .person:has(a:active), .contact .f-col:has(a:active) {
+    background: var(--color-coffee-400);
+}
+.profile-info a:active, .person:has(a:active) p, .contact .f-col:has(a:active) a {
+    color: var(--color-coffee-100) !important;
+}
+
 .profile-info > .inner {
     width: 100%;
     height: 100%;
