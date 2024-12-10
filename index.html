@@ -1,0 +1,249 @@
+<style>
+    :root {
+    --color-coffee-100: #ece0d1;
+    --color-coffee-200: #dbc1ac;
+    --color-coffee-300: #967259;
+    --color-coffee-400: #634832;
+    --color-coffee-500: #38220f;
+
+    --var-ring-offset-shadow: 0 0 #0000;
+    --var-ring-shadow: 0 0 #0000; 
+    --var-shadow: 0 0 #0000;
+    --var-shadow-color: 
+}
+
+
+body {
+    background-color: var(--color-coffee-200) !important;
+}
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: red !important;
+    }
+}
+
+/* start of nav */
+nav {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+nav .top {
+    background-color: var(--color-coffee-400) !important;
+    color: var(--color-coffee-100) !important;
+}
+
+nav .links {
+    background-color: var(--color-coffee-100) !important;
+    color: var(--color-coffee-500) !important;
+}
+
+nav .links a {
+    color: var(--color-coffee-500) !important;
+    text-shadow: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    nav .links {
+        background-color: var(--color-coffee-400) !important;
+        color: var(--color-coffee-100) !important;
+    }
+
+    nav .links a {
+        color: var(--color-coffee-100) !important;
+    }
+}
+
+/* end of nav */
+
+/* the | seperator */
+nav .links li:not(:last-child)::after, footer .links li:not(:last-child)::after {
+    color: var(--color-coffee-500) !important;
+}
+/* end of nav */
+
+main {
+    background: none;
+    color: var(--color-coffee-500);
+    padding: 10px 0px;
+}
+
+.contact .f-row {
+    display: flex;
+    margin: 7px 0px 7px 3px !important;
+}
+.contact .f-col {
+    display: flex;
+    width: 50%;
+    padding: 0px 5px;
+}
+.contact .f-col:last-of-type {
+    margin: 0px 10px;
+}
+.contact .f-col a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    color: var(--color-coffee-500) !important;
+    gap: 3px;
+}
+
+/* making the "Edit Profile" button bigger and easier to click */
+.profile-info, .contact .f-col {
+    padding: 0px;
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    transition: all 0.1s ease-out;
+    border: 2px solid var(--color-coffee-400) !important;
+    
+}
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
+  .profile-info:has(a), .f-col {
+      transition: none;
+  }
+  .profile-info:has(a):hover, .profile-info:has(a):focus-within, .contact .f-col:hover, .contact .f-col:focus-within {
+    box-shadow: 5px 5px var(--color-coffee-500);
+    right: 0px;
+    left: 0px;
+  }
+}
+
+/* effect when hovering/focusing the "edit profile" link */
+.profile-info:has(a):hover, .profile-info:has(a):focus-within, .contact .f-col:hover, .contact .f-col:focus-within {
+    box-shadow: 0px 0px var(--color-coffee-500);
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--color-coffee-500) !important; 
+    
+}
+
+.profile-info a {
+    outline: var(--color-coffee-500);
+    color: var(--color-coffee-500);
+}
+.profile-info > .inner {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-info h3 {
+    margin: 0;
+}
+.profile-info a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px 5px;
+    justify-content: center;
+}
+.profile-info a:focus {
+    text-decoration: underline;
+}
+
+/* Card style */
+.profile > .col:first-of-type, .blog-preview, .blurbs, .friends, nav, .profile-info, .person, footer, .f-col {
+    background-color: var(--color-coffee-100);
+    box-shadow: 5px 5px var(--color-coffee-400);
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+}
+.profile > .right {
+    flex-grow: 1;
+}
+
+.heading, .blog-preview h4 { 
+    background-color: var(--color-coffee-400) !important;
+    color: var(--color-coffee-100) !important;
+}
+
+.blog-preview h4 {
+    padding: 2px 7px;
+}
+.blog-preview a, .friends .more {
+    color: var(--color-coffee-100) !important;
+}
+
+.section h4 {
+    color: var(--color-coffee-500) !important;
+}
+.count {
+    color: var(--color-coffee-500) !important;
+}
+
+.person {
+    border: 2px solid var(--color-coffee-400) !important;
+    padding: 0px !important;
+    margin: 10px;
+    position: relative;
+    width: fit-content !important;
+    transition: all 0.1s ease-out;
+    right: 0px;
+    bottom: 0px;
+}
+.person a p, .person img {
+    margin: 0px !important;
+}
+.person a p {
+    color: var(--color-coffee-500) !important; 
+}
+.person a {
+    height: fit-content;
+    display: flex;
+}
+
+.person:focus-within, .person:hover {
+    box-shadow: 0px 0px var(--color-coffee-500);
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid var(--color-coffee-500);
+}
+
+.friends:not(#comments) {
+    margin-bottom: 20px;
+}
+
+.profile .contact, .profile .url-info, .profile .table-section, .setting-section, .home-actions, .profile-pic .pfp-fallback {
+    border: 2px solid var(--color-coffee-400) !important;
+}
+
+/* details table */
+.details-table td {
+    background: var(--color-coffee-200) !important;
+    color: var(--color-coffee-500) !important;
+}
+.details-table td:first-child {
+    background: var(--color-coffee-300) !important;
+    color: var(--color-coffee-100) !important;
+}
+
+@media (prefers-reduced-motion) {
+    .person:focus-within, .person:hover {
+        box-shadow: 5px 5px var(--color-coffee-500);
+        right: 0px;
+        bottom: 0px;
+    }   
+}
+
+/* make icons brown */
+.icon, .award img {
+    filter: grayscale(1) brightness(0.8) sepia(1);
+}
+
+table.comments-table, .comments-replies {
+    border: 1px solid var(--color-coffee-400);
+}
+.comments-table td:first-child a {
+    color: var(--color-coffee-100) !important;
+}
+.comments-table td:first-child, .music-table td:first-child {
+    background: var(--color-coffee-400) !important;  
+    
+}
+</style>
