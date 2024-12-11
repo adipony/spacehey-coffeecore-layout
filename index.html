@@ -9,7 +9,10 @@
     --var-ring-offset-shadow: 0 0 #0000;
     --var-ring-shadow: 0 0 #0000; 
     --var-shadow: 0 0 #0000;
-    --var-shadow-color: 
+    
+    --cube-pfp-size: 150px;
+    --cube-pfp-degree: calc(var(--cube-pfp-size)/2);
+    --user-pfp: url('');
 }
 
 
@@ -235,4 +238,77 @@ table.comments-table, .comments-replies {
     background: var(--color-coffee-400) !important;  
     
 }
+
+
+
+/* start of 3D profile picture */
+
+@keyframes imgrotation {
+    from {
+        transform: translateZ(-100px) rotateY(-180deg) rotateZ(-180deg);
+    }
+    to {
+        transform: translateZ(-100px) rotateY(180deg) rotateZ(180deg);
+    }
+}
+.scene {
+  width: var(--cube-pfp-size);
+  height: var(--cube-pfp-size);
+  perspective: 200px;
+  position: relative;
+  bottom: 455px;
+  right: 100px;
+}
+
+.general-about .pfp-fallback {
+    visibility: hidden;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s;
+  animation: imgrotation 10s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion) {
+    .general-about .pfp-fallback {
+        visibility: visible;
+    }
+    .cube, .scene {
+        animation: none;
+        display: none;
+    }
+}
+
+.cube__face {
+  position: absolute;
+  width: var(--cube-pfp-size);
+  height: var(--cube-pfp-size);
+}
+
+.cube div {
+    background: var(--user-pfp);
+    background-size: cover;
+    border: 2px solid var(--color-coffee-400);
+}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(var(--cube-pfp-degree)); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(var(--cube-pfp-degree)); }
+.cube__face--back   { transform: rotateY(180deg) rotateZ(180deg) translateZ(var(--cube-pfp-degree)); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(var(--cube-pfp-degree)); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(var(--cube-pfp-degree)); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(var(--cube-pfp-degree)); }
 </style>
+
+    <div class="scene">
+        <div class="cube">
+            <div class="cube__face cube__face--front"></div>
+            <div class="cube__face cube__face--back"></div>
+            <div class="cube__face cube__face--right"></div>
+            <div class="cube__face cube__face--left"></div>
+            <div class="cube__face cube__face--top"></div>
+            <div class="cube__face cube__face--bottom"></div>
+        </div>
+    </div>
