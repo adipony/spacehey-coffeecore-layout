@@ -1,0 +1,108 @@
+<style>
+    :root {
+    --color-coffee-100: #ece0d1;
+    --color-coffee-200: #dbc1ac;
+    --color-coffee-300: #967259;
+    --color-coffee-400: #634832;
+    --color-coffee-500: #38220f;
+
+    --var-ring-offset-shadow: 0 0 #0000;
+    --var-ring-shadow: 0 0 #0000; 
+    --var-shadow: 0 0 #0000;
+
+}
+
+
+body {
+    background-color: var(--color-coffee-200) !important;
+}
+
+
+/* start of nav */
+nav {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+nav .top {
+    background-color: var(--color-coffee-400) !important;
+    color: var(--color-coffee-100) !important;
+}
+
+nav .links {
+    background-color: var(--color-coffee-100) !important;
+    color: var(--color-coffee-500) !important;
+}
+
+nav .links a {
+    color: var(--color-coffee-500) !important;
+    text-shadow: none !important;
+}
+
+/* end of nav */
+
+/* card style */
+nav, .col, .blog-button { 
+    background-color: var(--color-coffee-100);
+    box-shadow: 5px 5px var(--color-coffee-400);
+}
+
+.blog-entry {
+    display: flex;
+    gap: 20px;
+}
+
+main {
+  padding: 10px 0px;
+  background: none;
+}
+
+.content {
+    padding: 10px !important;
+}
+
+.blog-button {
+    padding: 10px;
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    transition: all 0.1s ease-out;
+    border: 2px solid var(--color-coffee-400);
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-coffee-500);
+    
+}
+
+/* effect when hovering/focusing the blog link */
+.blog-button:hover, .blog-button:focus {
+    box-shadow: 0px 0px var(--color-coffee-500);
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--color-coffee-500) !important; 
+    
+}
+
+.profile-info a {
+    outline: var(--color-coffee-500);
+    color: var(--color-coffee-500);
+}
+/* targetting the active state to apply an effect when pressing the link to edit profile */
+.blog-button:active {
+    background: var(--color-coffee-400);
+    color: var(--color-coffee-100) !important;
+}
+
+
+.edit-info {
+    border: 2px solid var(--color-coffee-400) !important;
+    background: var(--color-coffee-200) !important;
+}
+
+.count {
+    color: var(--color-coffee-400) !important;
+}
+</style>
